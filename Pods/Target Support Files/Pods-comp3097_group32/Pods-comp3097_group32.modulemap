@@ -1,0 +1,6 @@
+framework module Pods_comp3097_group32 {
+  umbrella header "Pods-comp3097_group32-umbrella.h"
+
+  export *
+  module * { export * }
+}
