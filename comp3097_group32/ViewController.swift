@@ -18,21 +18,19 @@ struct Product {
     let purchaseDate: String
 }
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate {
+    
     @IBOutlet weak var afterTaxLabel: UILabel!
     @IBOutlet weak var taxLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
     @IBOutlet weak var percentageBtn: UIButton!
     @IBOutlet weak var selectUrgencyBtn: UIButton!
-    @IBOutlet weak var puchasedBtn: UIButton!
-    @IBOutlet weak var searchProductNameBox: UITextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var selectGroupBtn: UIButton!
     @IBOutlet weak var roundBtnAdd: UIButton!
     @IBOutlet weak var roundBtnGroup: UIButton!
     
-    
+    let searchController = UISearchController()
     let data: [Product] = [
         Product(name: "Apple", group: "Grocery", quantity: 2, urgency: "High", unitPrice: 1.05, createDate: "2023/2/23", purchaseDate: ""),
         Product(name: "T-shirt", group: "Clothes", quantity: 3, urgency: "Medium", unitPrice: 9.99, createDate: "2023/2/23", purchaseDate: "2023/2/24"),
@@ -42,13 +40,14 @@ class ViewController: UIViewController {
         Product(name: "Garlic", group: "Grocery", quantity: 1, urgency: "Low", unitPrice: 0.99, createDate: "2023/3/6", purchaseDate: "")
     ]
     
+    var filteredData = [Product]()
+    
     let dropDown = DropDown()
     let groupDropdown = DropDown()
     override func viewDidLoad() {
         super.viewDidLoad()
+        initSearchController()
         tableView.dataSource = self
-        searchProductNameBox.text = ""
-        searchProductNameBox.placeholder = "Enter product name"
         selectUrgencyBtn.layer.cornerRadius = 5
         selectUrgencyBtn.layer.borderWidth = 1
         selectUrgencyBtn.layer.borderColor = UIColor.black.cgColor
@@ -58,9 +57,6 @@ class ViewController: UIViewController {
         percentageBtn.layer.cornerRadius = 5
         percentageBtn.layer.borderWidth = 1
         percentageBtn.layer.borderColor = UIColor.black.cgColor
-        puchasedBtn.setImage(UIImage.init(named: "radio-button-off"), for: .normal)
-        puchasedBtn.setImage(UIImage.init(named: "radio_button_on"), for: .selected)
-        puchasedBtn.tintColor = .white
         
         roundBtnAdd.layer.cornerRadius = roundBtnAdd.frame.width / 2
         roundBtnAdd.layer.masksToBounds = true
@@ -73,7 +69,19 @@ class ViewController: UIViewController {
         for product in data {
             total += Double(product.quantity) * product.unitPrice
         }
-        
+        func initSearchController(){
+            searchController.loadViewIfNeeded()
+            searchController.searchResultsUpdater = self
+            searchController.obscuresBackgroundDuringPresentation = false
+            searchController.searchBar.enablesReturnKeyAutomatically = false
+            searchController.searchBar.returnKeyType = UIReturnKeyType.done
+            definesPresentationContext = true
+            navigationItem.searchController = searchController
+            navigationItem.hidesSearchBarWhenScrolling = false
+            searchController.searchBar.placeholder = "Enter product name"
+            searchController.searchBar.scopeButtonTitles = ["All", "Purchased", "Unpurchased"]
+            searchController.searchBar.delegate = self
+        }
         costLabel.text = String(format:"%.2f", total)
         taxLabel.text = String(format:"%.2f", total * tax)
         afterTaxLabel.text = String(format:"%.2f", total * (1 + tax))
@@ -103,15 +111,46 @@ class ViewController: UIViewController {
             sender.setTitle(item, for: .normal)
         }
     }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        let scopeButton = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        let searchText = searchBar.text!
+        
+        filterForSearchTextAndScopeButton(searchText: searchText, scopeButton: scopeButton)
+    }
+    
+    func filterForSearchTextAndScopeButton(searchText: String, scopeButton: String = "All") {
+        filteredData = data.filter{
+            item in
+            let scopeMatch = (scopeButton == "All")
+                    // || if (item.purchaseDate == "") {scopeButton = "Unpurchased"})
+            if(searchController.searchBar.text != "") {
+                let searchTextMatch = item.name.lowercased().contains(searchText.lowercased())
+                return scopeMatch && searchTextMatch
+            } else {
+                return scopeMatch
+            }
+        }
+        tableView.reloadData()
+    }
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if (searchController.isActive){
+            return filteredData.count
+        }
         return data.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let product = data[indexPath.row]
+        let product: Product!
+        if(searchController.isActive) {
+            product = filteredData[indexPath.row]
+        }else {
+            product = data[indexPath.row]
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "productCell", for: indexPath) as! ProductTableViewCell
         cell.update(with: product)
         return cell
