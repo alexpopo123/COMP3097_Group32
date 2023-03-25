@@ -9,20 +9,24 @@ import UIKit
 
 class TaxViewController: UIViewController {
 
+    // tax page
     @IBOutlet weak var taxBox: UITextField!
     @IBOutlet weak var taxLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // display tax
         taxBox.text = ""
         taxBox.placeholder = "Update Tax %"
     }
     
+    // cancel and return to homepage
     @IBAction func onClickCancel(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
     
+    // save, update and return to homepage
     @IBAction func onClickSave(_ sender: UIButton) {
         if taxBox.text == nil{
             return
@@ -35,6 +39,7 @@ class TaxViewController: UIViewController {
             }
         }
     }
+    
     /*
     // MARK: - Navigation
 

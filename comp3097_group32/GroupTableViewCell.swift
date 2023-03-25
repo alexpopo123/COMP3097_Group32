@@ -9,6 +9,7 @@ import UIKit
 
 class GroupTableViewCell: UITableViewCell {
 
+    // list of groups in product group page
     @IBOutlet weak var groupLabel: UILabel!
     func update(with product: String) {
         groupLabel.text = product

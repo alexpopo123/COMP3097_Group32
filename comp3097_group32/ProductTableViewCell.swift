@@ -9,10 +9,12 @@ import UIKit
 
 class ProductTableViewCell: UITableViewCell {
 
+    // custom product cell (homepage)
     @IBOutlet weak var productLabel: UILabel!
     @IBOutlet weak var urgencyLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var groupLabel: UILabel!
+    
     func update(with product: Product) {
         productLabel.text = product.name
         groupLabel.text = product.group

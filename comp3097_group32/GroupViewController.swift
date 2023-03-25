@@ -14,11 +14,12 @@ class GroupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // add group
         groupNameBox.text = ""
         groupNameBox.placeholder = "Enter Group Name"
     }
     
+    // cancel and return to group page
     @IBAction func onClickCancel(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }

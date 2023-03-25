@@ -30,10 +30,134 @@
             filePath = "comp3097_group32/DetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "DetailViewController"
             landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "511554F8-991E-4CE1-962E-BB4245517DF6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "comp3097_group32/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
+            landmarkName = "tableView(_:viewForHeaderInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "71B1B49F-CD81-44A4-B0EE-2FE750A7EEDF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "comp3097_group32/EditProductViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "EditProductViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "71B1B49F-CD81-44A4-B0EE-2FE750A7EEDF - b06499c776fc64fa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "comp3097_group32.EditProductViewController.productNameBox.getter : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "comp3097_group32"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lomanchanshum/Desktop/comp3097_group32/comp3097_group32/EditProductViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "85">
+               </Location>
+               <Location
+                  uuid = "71B1B49F-CD81-44A4-B0EE-2FE750A7EEDF - ef2d03f8a1af7cbe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "comp3097_group32.EditProductViewController.productNameBox.setter : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "comp3097_group32"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lomanchanshum/Desktop/comp3097_group32/comp3097_group32/EditProductViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "71B1B49F-CD81-44A4-B0EE-2FE750A7EEDF - 577899b60e8052c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "comp3097_group32.EditProductViewController.productNameBox.modify : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "comp3097_group32"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lomanchanshum/Desktop/comp3097_group32/comp3097_group32/EditProductViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "71B1B49F-CD81-44A4-B0EE-2FE750A7EEDF - 2a4d95f4c2743483"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "comp3097_group32.EditProductViewController.productNameBox.modify : Swift.Optional&lt;__C.UITextField&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "comp3097_group32"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lomanchanshum/Desktop/comp3097_group32/comp3097_group32/EditProductViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "71B1B49F-CD81-44A4-B0EE-2FE750A7EEDF - 10b5b3bda62c34f7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "comp3097_group32.EditProductViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; comp3097_group32.EditProductViewController"
+                  moduleName = "comp3097_group32"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lomanchanshum/Desktop/comp3097_group32/comp3097_group32/EditProductViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "477">
+               </Location>
+               <Location
+                  uuid = "71B1B49F-CD81-44A4-B0EE-2FE750A7EEDF - dec0e38a01bbeba8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "comp3097_group32.EditProductViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;comp3097_group32.EditProductViewController&gt;"
+                  moduleName = "comp3097_group32"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lomanchanshum/Desktop/comp3097_group32/comp3097_group32/EditProductViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "437">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
